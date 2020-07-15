@@ -6,10 +6,8 @@ import com.technokratos.common.di.FeatureContainer
 import com.technokratos.common.di.scope.ApplicationScope
 import com.technokratos.core_db.di.DbApi
 import com.technokratos.core_db.di.DbHolder
-import com.technokratos.feature_user_api.di.UserFeatureApi
 import com.technokratos.splash.di.SplashFeatureApi
 import com.technokratos.splash.di.SplashFeatureHolder
-import com.technokratos.users.di.UserFeatureHolder
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.ClassKey
@@ -27,12 +25,6 @@ interface ComponentHolderModule {
     @ClassKey(SplashFeatureApi::class)
     @IntoMap
     fun provideSplashFeatureHolder(splashFeatureHolder: SplashFeatureHolder): FeatureApiHolder
-
-    @ApplicationScope
-    @Binds
-    @ClassKey(UserFeatureApi::class)
-    @IntoMap
-    fun provideUserFeatureHolder(userFeatureHolder: UserFeatureHolder): FeatureApiHolder
 
     @ApplicationScope
     @Binds
